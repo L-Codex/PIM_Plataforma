@@ -75,8 +75,4 @@ def calcular_moda(lista: List[float]) -> Optional[Union[float, List[float]]]:
 
     modas = [k for k, v in frequencias.items() if v == maior_freq]
 
-    # If all values have the same frequency and appear more than once, no mode
-    if len(modas) == len(lista):
-        return None
-
     return modas[0] if len(modas) == 1 else modas

@@ -2,6 +2,7 @@
 Tests for the CLI module.
 """
 
+import os
 import tempfile
 from io import StringIO
 from unittest.mock import patch
@@ -71,8 +72,6 @@ class TestRegistrarAluno:
         alunos: list[Aluno] = []
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            import os
-
             os.environ["PIM_DATA_PATH"] = f"{tmpdir}/alunos.json"
 
             inputs = iter(["Test User", "test@example.com", "password123"])
